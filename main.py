@@ -1,7 +1,7 @@
 import gym_cutting_stock
 import gymnasium as gym
 from policy import GreedyPolicy, RandomPolicy
-from student_submissions.s2211412.policy2211412 import Policy2211412
+from student_submissions.s2210xxx.policy2210xxx import Policy2210xxx
 
 # Create the environment
 env = gym.make(
@@ -11,7 +11,6 @@ env = gym.make(
 NUM_EPISODES = 100
 
 if __name__ == "__main__":
-    """"
     # Reset the environment
     observation, info = env.reset(seed=42)
 
@@ -35,19 +34,6 @@ if __name__ == "__main__":
     ep = 0
     while ep < NUM_EPISODES:
         action = rd_policy.get_action(observation, info)
-        observation, reward, terminated, truncated, info = env.step(action)
-
-        if terminated or truncated:
-            print(info)
-            observation, info = env.reset(seed=ep)
-            ep += 1
-    """
-    observation, info = env.reset(seed = 42)
-    # Test
-    rd = Policy2211412()
-    ep = 0
-    while ep < NUM_EPISODES:
-        action = rd.get_action(observation, info)
         observation, reward, terminated, truncated, info = env.step(action)
 
         if terminated or truncated:
